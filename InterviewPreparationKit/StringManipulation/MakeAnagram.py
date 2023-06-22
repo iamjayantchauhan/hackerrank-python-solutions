@@ -1,11 +1,6 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
-
+from collections import Counter
 
 #
 # Complete the 'makeAnagram' function below.
@@ -15,9 +10,16 @@ import sys
 #  1. STRING a
 #  2. STRING b
 #
+
+
 def makeAnagram(a, b):
-    # Write your code here
-    return 0
+    a_mappings = Counter(a)
+    b_mappings = Counter(b)
+    final_set = set(a + b)
+    count = 0
+    for i in final_set:
+        count += abs(a_mappings.get(i, 0) - b_mappings.get(i, 0))
+    return count
 
 
 if __name__ == '__main__':
