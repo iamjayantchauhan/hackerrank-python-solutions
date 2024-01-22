@@ -2,6 +2,7 @@
 
 from collections import Counter
 
+
 #
 # Complete the 'makeAnagram' function below.
 #
@@ -12,10 +13,10 @@ from collections import Counter
 #
 
 
-def make_anagram(a, b):
-    a_mappings = Counter(a)
-    b_mappings = Counter(b)
-    final_set = set(a + b)
+def make_anagram(string_one: str, string_two: str):
+    a_mappings = Counter(string_one)
+    b_mappings = Counter(string_two)
+    final_set = set(string_one + string_two)
     count = 0
     for i in final_set:
         count += abs(a_mappings.get(i, 0) - b_mappings.get(i, 0))
