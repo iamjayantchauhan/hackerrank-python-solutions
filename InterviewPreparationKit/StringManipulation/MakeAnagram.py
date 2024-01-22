@@ -12,7 +12,7 @@ from collections import Counter
 #
 
 
-def makeAnagram(a, b):
+def make_anagram(a, b):
     a_mappings = Counter(a)
     b_mappings = Counter(b)
     final_set = set(a + b)
@@ -26,6 +26,6 @@ if __name__ == '__main__':
     fptr = open("test.txt", 'w')
     a = input()
     b = input()
-    res = makeAnagram(a, b)
+    res = make_anagram(a, b)
     fptr.write(str(res) + '\n')
     fptr.close()
